@@ -8,6 +8,6 @@ function outerFunction() {
   }
 }
 
-var myScope = outerFunction()();
+var myScope = outerFunction();
 
-myScope
+myScope();
