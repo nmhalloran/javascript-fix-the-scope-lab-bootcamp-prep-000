@@ -1,11 +1,13 @@
-function add(x) {
-  return function(y) {
-    console.log(`${x} + ${y}!`);
-    return x + y;
-  };
+function outerFunction() {
+  var innerVariable = "I'm sort of a secret.";
+
+  return function innerScope() {
+    var inaccessible = "Nothing can touch me.";
+    console.log(inaccessible)
+    return innerVariable;
+  }
 }
 
-var addTwo = add(2);
+var myScope = outerFunction()();
 
-addTwo(4)
-add(3)(4) === 7
+myScope
